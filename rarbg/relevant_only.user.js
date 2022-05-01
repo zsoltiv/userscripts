@@ -53,7 +53,6 @@ for(const result of results) {
     }
 
     if(!has_a_keyword) {
-        console.log(name + ' is hidden now');
         result.style.display = 'none';
     }
 }

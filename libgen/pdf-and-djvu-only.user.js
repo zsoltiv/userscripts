@@ -27,7 +27,6 @@ const results = document.getElementsByTagName('table')[2].getElementsByTagName('
 let trs = results.getElementsByTagName('tr');
 for(let i = 1; i < trs.length; i++) {
     let format = trs[i].getElementsByTagName('td')[8].innerHTML;
-    console.log(format);
     if(format !== 'djvu' && format !== 'pdf')
         trs[i].style.display = 'none';
 }
