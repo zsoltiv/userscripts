@@ -21,13 +21,6 @@
 // You should have received a copy of the GNU Affero General Public License along with this program.
 // If not, see <https://www.gnu.org/licenses/>.
 
-// CHANGE THIS
-
-// if this is true, all keywords have to be present in the result (case insensitive)
-const STRICT = false;
-
-// DO NOT CHANGE THESE
-
 const results = document.getElementsByClassName('lista2');
 const search = document.getElementById('searchinput').value.trim();
 const keywords = search.split(' ');
@@ -36,20 +29,9 @@ for(const result of results) {
     const name = result.innerText.toUpperCase();
     let has_a_keyword = false;
 
-    if(STRICT) {
-        // STRICT BEHAVIOUR
-        for(const keyword of keywords) {
-            if(name.includes(keyword.toUpperCase()))
-                has_a_keyword = true;
-            else
-                has_a_keyword = false;
-        }
-    } else {
-        // DEFAULT BEHAVIOUR
-        for(const keyword of keywords) {
-            if(name.includes(keyword.toUpperCase()))
-                has_a_keyword = true;
-        }
+    for(const keyword of keywords) {
+        if(name.includes(keyword.toUpperCase()))
+            has_a_keyword = true;
     }
 
     if(!has_a_keyword) {
